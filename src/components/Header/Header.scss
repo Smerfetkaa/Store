@@ -1,0 +1,63 @@
+@import "../../style/main.scss";
+
+.head {
+  background-color: $darkBG;
+  @include flex(row, center, space-between);
+  padding: 16px 250px;
+
+  &__logo > a {
+    color: $white;
+  }
+  &__nav {
+    position: relative;
+    @include flex(row, center, space-around);
+    &__link {
+      position: relative;
+    }
+    &__img {
+      width: 32px;
+      height: 32px;
+      padding: 16px;
+      fill: none;
+      stroke: $white;
+      &:hover {
+        background-color: $darkGrey;
+      }
+    }
+    & div {
+      position: absolute;
+      right: 0;
+      top: 5px;
+      @include flex(row, center, center);
+      color: $white;
+      width: 23px;
+      height: 23px;
+      border-radius: 50px;
+      background-color: $orange;
+    }
+  }
+}
+.categories {
+  background-color: $black;
+  padding: 10px 250px;
+  button {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: $white;
+    font-weight: 500;
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    &:hover {
+      border-color: $orange;
+    }
+    &.btn-active {
+      border: 1px solid $orange;
+      box-shadow: 1px 1px 5px $orange;
+    }
+    & a:visited,
+    & a:active {
+      color: $white;
+    }
+  }
+}

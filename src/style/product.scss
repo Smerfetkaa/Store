@@ -1,0 +1,109 @@
+@import "./main.scss";
+.product {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+  background-color: $white;
+  padding: 60px;
+  gap: 20px;
+  &__image {
+    @include flex(column, center, center);
+
+    &__container {
+      position: relative;
+      height: 550px;
+      @include flex(column, center, center);
+      .actions {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        @include flex(row, center, space-between);
+
+        button {
+          margin: 0 10px;
+          background-color: $mainBG;
+          border: none;
+          border-radius: 50%;
+          @include flex(row, center, center);
+          cursor: pointer;
+          &:hover {
+            background-color: $lightGrey;
+          }
+        }
+        &__icon {
+          width: 20px;
+          height: 26px;
+          fill: none;
+          stroke: $black;
+        }
+      }
+    }
+    &--main {
+      object-fit: contain;
+      max-width: 100%;
+    }
+  }
+  &__thumbnail {
+    @include flex(row, center, center);
+    padding: 20px;
+    text-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+      height: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
+      box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.1),
+        inset 0px -1px 0px rgba(0, 0, 0, 0.07);
+      &:hover {
+        background: rgba(0, 0, 0, 0.4);
+        box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.25);
+      }
+    }
+    .active {
+      transform: scale(1.2);
+      box-shadow: 0px 0px 20px -3px $orange;
+    }
+    img {
+      margin: 10px;
+      transition: all 500ms;
+      cursor: pointer;
+      box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.15);
+    }
+  }
+  &__content {
+    @include flex(column, flex-start, center);
+    &__title {
+      @include font(30px, 400, 32px);
+    }
+    &__stock {
+      &--available {
+        @include font(16px, 400, 20px);
+        margin: 20px 0;
+        color: green;
+      }
+      &--unavailable {
+        @include font(16px, 400, 20px);
+        margin: 20px 0;
+        color: red;
+      }
+    }
+    &__description {
+      @include font(16px, 400, 20px);
+    }
+    &__price {
+      @include font(30px, 400, 32px);
+      margin: 40px 0 60px 0;
+    }
+    &__btns {
+      @include flex(row, center, center);
+      gap: 20px;
+    }
+  }
+}

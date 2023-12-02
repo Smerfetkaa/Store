@@ -1,0 +1,137 @@
+@import "./main.scss";
+
+.cart {
+  &__list {
+    display: flex;
+    align-items: center;
+    @include font(20px, 500, 1.2);
+    padding: 24px 0;
+    & li:first-child {
+      width: 42%;
+    }
+    & li:nth-child(2),
+    & li:last-child {
+      width: 18%;
+    }
+    & li:nth-child(3) {
+      width: 22%;
+    }
+  }
+  &__empty {
+    text-align: center;
+    font-size: 24px;
+    & a {
+      @include font(24px, 500, 1.2);
+      color: $orange;
+      &:link,
+      &:visited {
+        color: $orange;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__card {
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    &__title {
+      @include font(16px, 500, 1.2);
+    }
+    &__image {
+      width: 60px;
+      height: 60px;
+      &-container {
+        display: inline-flex;
+        gap: 30px;
+        align-items: center;
+        width: 42%;
+        cursor: pointer;
+      }
+    }
+    &__price {
+      width: 18%;
+      & p {
+        @include font(16px, 500, 1.2);
+      }
+    }
+    &__qty {
+      width: 22%;
+      @include flex(row, center, flex-start);
+      & span {
+        @include font(16px, 500, 1.2);
+        padding: 10px;
+        border-left: 1px solid $lightGrey;
+        border-right: 1px solid $lightGrey;
+      }
+      & button {
+        cursor: pointer;
+        border: none;
+        background: none;
+        &:hover > .cart__card__qty-icon {
+          stroke: $orange;
+        }
+      }
+      &-icon {
+        width: 24px;
+        height: 24px;
+        stroke: $black;
+      }
+
+      &__total > span {
+        @include font(16px, 500, 1.2);
+      }
+    }
+    &__remove {
+      cursor: pointer;
+      border: none;
+      background: none;
+      margin-left: auto;
+      margin-right: 10px;
+      &:hover > .cart__card__remove-icon {
+        stroke: $orange;
+      }
+      &-icon {
+        width: 24px;
+        height: 24px;
+        stroke: $black;
+      }
+    }
+  }
+  &__total {
+    @include flex(column, normal, normal);
+    width: 300px;
+    margin-left: auto;
+    & div {
+      @include flex(row, center, space-between);
+      padding: 20px 0;
+    }
+    &__price {
+      @include font(16px, 500, 1.2);
+      color: $black;
+    }
+    &__discount {
+      @include font(16px, 500, 1.2);
+      color: $grey;
+    }
+    &__pay {
+      @include font(22px, 500, 1.2);
+      color: $black;
+      &-orange {
+        color: $orange;
+      }
+    }
+  }
+}
+.btn--orange {
+  padding: 14px 64px;
+  background: $orange;
+  color: $white;
+  border: none;
+  cursor: pointer;
+  &:active {
+    transform: scaleX(1.02);
+  }
+}

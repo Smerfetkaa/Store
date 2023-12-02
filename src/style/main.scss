@@ -1,0 +1,72 @@
+@mixin flex($fd, $ai, $jc) {
+  display: flex;
+  flex-direction: $fd;
+  align-items: $ai;
+  justify-content: $jc;
+}
+@mixin font($fs, $fw, $lh) {
+  font-family: Raleway;
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+}
+
+$orange: #f05a00;
+$mainBG: #f2f5f7;
+$darkBG: #333333;
+$darkGrey: #3b3b3b;
+$grey: #8a8a8a;
+$lightGrey: #dedbdb;
+$white: #fff;
+$black: black;
+
+.loading {
+  display: flex;
+  align-items: center;
+}
+.page {
+  background-color: $mainBG;
+  padding: 20px 250px;
+  display: grid;
+  gap: 10px;
+  min-height: 100vh;
+  grid-auto-rows: max-content;
+  &__breadcrumb {
+    padding: 10px 0;
+    list-style: none;
+    @include flex(row, center, flex-start);
+    li {
+      @include font(16px, 400, 16px);
+    }
+    li + li:before {
+      padding: 8px;
+      color: $black;
+      content: "/\00a0";
+    }
+    li > a {
+      color: $grey;
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    & h1 {
+      @include font(40px, 400, 1.2);
+      text-transform: uppercase;
+    }
+
+    & button {
+      border: 1px solid $lightGrey;
+      background-color: $mainBG;
+      padding: 14px 32px;
+      & > a {
+        @include font(16px, 500, 1.2);
+        color: $black;
+      }
+    }
+  }
+}

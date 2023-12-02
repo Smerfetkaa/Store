@@ -1,0 +1,10 @@
+@import "./main.scss";
+.home {
+  background-color: $mainBG;
+  padding: 20px 250px;
+}
+.loading {
+  @include flex(row, center, center);
+  flex-wrap: wrap;
+  gap: 10px;
+}

@@ -1,0 +1,16 @@
+@import "../../style/main.scss";
+
+.card-skeleton {
+  width: 330px;
+  @include flex(column, center, center);
+  background: $white;
+  border-radius: 5px;
+
+  &-bottom {
+    width: 100%;
+    @include flex(row, center, space-between);
+    div {
+      @include flex(row, center, space-between);
+    }
+  }
+}
