@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Store/static/css/main.a50458e7.css",
+    "main.js": "/Store/static/js/main.62731dd1.js",
+    "static/media/symbol-defs.svg": "/Store/static/media/symbol-defs.475cf64d0c965452b6c89455a5458b6c.svg",
+    "index.html": "/Store/index.html",
+    "main.a50458e7.css.map": "/Store/static/css/main.a50458e7.css.map",
+    "main.62731dd1.js.map": "/Store/static/js/main.62731dd1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a50458e7.css",
+    "static/js/main.62731dd1.js"
+  ]
+}
